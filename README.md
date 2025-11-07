@@ -1,57 +1,90 @@
-# Malaria-Cells-Image-Classification-using-CNN-and-Transfer-Learning
-This project focuses on automated malaria detection from microscopic cell images using deep learning. The aim is to classify cell images as Parasitized or Uninfected efficiently and accurately, helping in early diagnosis and reducing manual workload for pathologists.
-🔍 Overview
+# 🧠 Malaria Cells Image Classification using CNN and Transfer Learning  
 
-The project explores multiple Convolutional Neural Network (CNN) architectures and transfer learning techniques to detect malaria from blood smear images.
-Both pre-trained models and a custom CNN (baseline model) are implemented and compared for performance.
+This repository contains my research project on **Malaria Detection from Microscopic Cell Images** using **Convolutional Neural Networks (CNN)** and **Transfer Learning**.  
+The goal is to automatically classify cell images as **Parasitized** or **Uninfected**, reducing manual diagnosis effort and improving accuracy.  
 
-🧬 Models Used
+---
 
-VGG19
+## 📌 Project Overview  
+This project implements and compares multiple deep learning architectures for malaria detection.  
+Both **custom CNN (from scratch)** and **pre-trained transfer learning models** are fine-tuned on the **NIH Malaria Cell Dataset** for classification tasks.  
 
-ResNet50
+---
 
-DenseNet121
+## 🧬 Models Implemented  
 
-MobileNetV2
+| **Model** | **Type** | **Key Features** |
+|------------|-----------|------------------|
+| **VGG19** | Transfer Learning | Deep layered CNN with uniform architecture |
+| **ResNet50** | Transfer Learning | Skip connections to avoid vanishing gradients |
+| **DenseNet121** | Transfer Learning | Dense connectivity for feature reuse |
+| **MobileNetV2** | Transfer Learning | Lightweight with depthwise separable convolutions |
+| **Custom CNN** | From Scratch | Baseline CNN model for performance comparison |
 
-Custom CNN (from scratch)
+---
 
-Each model is fine-tuned on the NIH Malaria Cell Dataset, which contains thousands of labeled microscopic cell images.
+## ⚙️ Methodology  
 
-⚙️ Methodology
+1. **Data Preprocessing**  
+   - Image resizing and normalization  
+   - Data augmentation (rotation, zoom, flip, etc.)  
 
-Dataset Preprocessing – Images are resized, normalized, and augmented for better generalization.
+2. **Model Training**  
+   - Transfer learning using ImageNet pre-trained weights  
+   - **Optimizer:** Adam  
+   - **Loss Function:** Categorical Cross-Entropy  
+   - **Evaluation Metrics:** Accuracy, Loss, Confusion Matrix  
 
-Model Loading & Training – Pre-trained models are fine-tuned with transfer learning using ImageNet weights.
+3. **Evaluation**  
+   - Comparison of model accuracies  
+   - Visualization of training & validation curves  
+   - Analysis of misclassified samples  
 
-Optimization – Models trained using the Adam optimizer and categorical cross-entropy loss function.
+---
 
-Evaluation – Accuracy, loss curves, and confusion matrices are used for performance analysis.
+## 📊 Dataset  
 
-📊 Results
+- **Dataset:** [NIH Malaria Cell Dataset](https://lhncbc.nlm.nih.gov/LHC-downloads/downloads.html#malaria-datasets)  
+- **Classes:** Parasitized, Uninfected  
+- **Total Images:** ~27,000 cell images  
 
-The models are compared based on their accuracy, training time, and generalization capability.
-Transfer learning models significantly outperform the custom CNN, highlighting the advantage of pre-trained feature extractors in biomedical image classification.
+---
 
-💾 Dataset
+## 💻 Tech Stack  
 
-Source: NIH Malaria Cell Dataset
+- **Language:** Python  
+- **Frameworks:** PyTorch / TensorFlow  
+- **Libraries:** NumPy, Pandas, Matplotlib, Seaborn, Torchvision  
+- **Platform:** Google Colab / Jupyter Notebook  
 
-Classes: Parasitized, Uninfected
+---
 
-Image Count: ~27,000 cell images
+## 📈 Results Summary  
 
-🧩 Technologies Used
+- Transfer learning models, especially **DenseNet121** and **ResNet50**, achieved the highest accuracy.  
+- The project shows that **transfer learning significantly improves performance** compared to a scratch CNN model.  
 
-Python
+---
 
-PyTorch / TensorFlow
+## 🏁 Objective  
 
-NumPy, Pandas, Matplotlib, Seaborn
+To develop an **efficient and accurate deep learning model** for classifying malaria-infected cells, demonstrating how CNNs and transfer learning can assist in automated medical image diagnosis.  
 
-Google Colab / Jupyter Notebook
+---
 
-🏁 Objective
 
-To develop an efficient and accurate model for malaria cell classification using CNN and transfer learning, demonstrating how deep learning can aid in medical image analysis.
+## 🚀 Future Scope  
+
+- Deploy the best-performing model as a **web app** (Flask / Streamlit)  
+- Extend dataset for **multi-class medical image classification**  
+- Explore **Vision Transformers (ViT)** for advanced feature learning  
+
+---
+
+## 🤝 Acknowledgements  
+
+- **NIH** for providing the malaria dataset  
+- **PyTorch / TensorFlow** communities for open-source frameworks  
+- **Researchers and mentors** who contributed to CNN architecture advancements  
+
+---
